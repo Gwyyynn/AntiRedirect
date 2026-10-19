@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font: 14px Arial, sans-serif;
+      width: 440px;
+      max-height: 580px;
+      padding: 12px;
+      box-sizing: border-box;
+      color: #222;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+    }
+
+    #stats {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 9px;
+      margin-bottom: 8px;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 7px 9px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .toolbar button {
+      flex: 1;
+    }
+
+    #domainList {
+      max-height: 330px;
+      overflow-y: auto;
+      border-top: 1px solid #ddd;
+    }
+
+    .domain {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .name {
+      overflow-wrap: anywhere;
+      font-weight: bold;
+    }
+
+    .count {
+      color: #666;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .blocked {
+      color: #b00020;
+    }
+
+    .blocked button {
+      color: #b00020;
+    }
+
+    #message {
+      color: #555;
+      overflow-wrap: anywhere;
+    }
+
+    .bottom {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .bottom button {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <h2>AntiRedirect</h2>
+  <div id="stats">Загрузка журнала...</div>
+
+  <input
+    id="search"
+    type="text"
+    placeholder="Поиск домена..."
+  >
+
+  <div class="toolbar">
+    <button id="addDomain">+ Добавить домен</button>
+    <button id="refresh">Обновить</button>
+  </div>
+
+  <div id="domainList"></div>
+  <p id="message"></p>
+
+  <div class="bottom">
+    <button id="export">Скачать журнал</button>
+    <button id="clear">Очистить журнал</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
